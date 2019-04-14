@@ -2,3 +2,68 @@
     margin: 0;
     padding: 0;
 }
+
+h1 {
+    text-align: center;
+}
+
+body {
+    background: #efefef;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+}
+
+.app {
+    margin: 30px auto;
+    max-width: 500px;
+    padding: 20px;
+    box-shadow: 0 5px 5px 0 #777;
+    border-radius: 5px;
+    background: #fff;
+
+}
+
+input {
+    border: none;
+    width: 90%;
+    line-height: 1.4em;
+    padding: 0.5em 1em;
+    outline-style: none;
+    margin: auto;
+}
+
+main {
+    min-height: 100px;
+}
+
+.todo-list {
+    border-top: 1px solid #555;
+    
+}
+
+footer {
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 1em 10px;
+    border-top: 1px solid #555;
+    background: #fff;
+    font-size: 0.8em;
+}
+
+.todo-count {
+    color: #555;
+}
+
+footer ul {
+    list-style: none;
+    margin: 0 6em;
+}
+
+a {
+    color: #555;
+}
+
+.filter li {
+    display: inline;
+    margin: 10px;
+}

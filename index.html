@@ -9,15 +9,15 @@
     <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
+    <!-- header -->
+    <header>
+        <h1>Todos</h1>
+    </header>
+    
+    <!-- main -->
     <section class="app">
-        <!-- header -->
-        <header>
-            <h1>Todos</h1>
-            <input class="new-todo" placeholder="Enter your tasks">
-        </header>
-
-        <!-- main -->
         <main>
+            <input class="new-todo" placeholder="Enter your tasks">
         	<ul class="todo-list">
 
         	</ul>
@@ -25,17 +25,22 @@
 
         <!-- footer -->
 		<footer>
-			<span class="todo-count">2 items left</span>
+            <!-- to be manipulated by JS -->
+			<span class="todo-count">a</span>
 
 			<ul class="filter">
-
-				<li>all</li>
-				<li>active</li>
-				<li>completed</li>
-
+				<li class="all">
+                    <a href="#">All</a>
+                </li>
+				<li>
+                    <a href="#">Active</a>
+                </li>
+				<li>
+                    <a href="#">Completed</a>
+                </li>
 			</ul>
 
-			<button class="clear">clear completed</button>
+			<a class="clear" href="#">Clear Completed</a>
 		</footer>
 
     </section>
