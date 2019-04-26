@@ -15,7 +15,8 @@ var controller = {
         $in.addEventListener('keypress', function (e) {
             if(e.code == 'Enter'){
                 Model.add($in.value);
-                View.render(Model.get());
+                View.render(Model.getAll(), Model.getCount());
+                $in.value = '';
             }
         });
     }
