@@ -38,7 +38,21 @@ main {
 
 .todo-list {
     border-top: 1px solid #555;
-    
+    list-style: none;
+}
+
+input[type='checkbox']{
+    width: 40%;
+    height: 20px;
+    position: relative;
+    top: 5px;
+}
+
+.task {
+    display: block;
+    line-height: 3;
+    border-bottom: 1px solid rgb(200, 200, 200);
+    font-size: 1.2em;
 }
 
 footer {

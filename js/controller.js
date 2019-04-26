@@ -1,4 +1,5 @@
 var $in = document.querySelector('.new-todo');
+var $clear = document.querySelector('.clear');
 
 var controller = {
 
@@ -8,7 +9,6 @@ var controller = {
 
     launch: function () {
         // launch components
-        Model.init();
         View.init();
 
         // listen to the Enter key
@@ -19,6 +19,17 @@ var controller = {
                 $in.value = '';
             }
         });
+
+        $clear.addEventListener('click', function(){
+            if(confirm('Clear all tasks?')){
+                Model.drop();
+                View.render([], 0);
+            }
+        })
+    },
+
+    getElems: function () {
+        return Model.getAll();
     }
 }
 
