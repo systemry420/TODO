@@ -30,9 +30,25 @@ var Model = {
         }
     },
 
-    delete: function(){
+    delete: function(t){
         // delete an item
+        var item = t.children[1].textContent;
 
+        try {
+            arr = JSON.parse(localStorage.getItem('todo'));
+        } catch (error) {
+            console.log("ob " + error);
+        }
+
+        for (const key in arr) {
+            const el = arr[key];
+            if(el.name === item){
+                arr.splice(key, 1);
+                break;
+            }
+        }
+
+        localStorage.setItem('todo', JSON.stringify(arr));
     },
 
     getAll: function(){

@@ -30,7 +30,12 @@ var controller = {
 
     getElems: function () {
         return Model.getAll();
-    }
+    },
+
+    deleteTask: function(){
+        Model.delete(this.parentNode);
+        View.render(Model.getAll(), Model.getCount());
+    },
 }
 
 // initialize controller
