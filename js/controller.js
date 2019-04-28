@@ -24,19 +24,19 @@ var controller = {
                 Model.drop();
                 View.render([], 0);
             }
-        })
+        });
     },
 
     getElems: function () {
         return Model.getAll();
     },
 
-    deleteTask: function(){
+    deleteTask: function() {
         Model.delete(this.parentNode);
         View.render(Model.getAll(), Model.getCount());
     },
 
-    done: function(){
+    done: function() {
         if(this.checked == true){
             Model.done(this.parentNode);
             View.done(this.parentNode);
