@@ -1,4 +1,3 @@
-
 var Model = {
     arr: [],
 
@@ -44,6 +43,44 @@ var Model = {
             const el = arr[key];
             if(el.name === item){
                 arr.splice(key, 1);
+                break;
+            }
+        }
+
+        localStorage.setItem('todo', JSON.stringify(arr));
+    },
+
+    done: function(t){
+        var item = t.children[1].textContent;
+        try {
+            arr = JSON.parse(localStorage.getItem('todo'));
+        } catch (error) {
+            console.log("ob " + error);
+        }
+
+        for (const key in arr) {
+            const el = arr[key];
+            if(el.name === item){
+                el.done = true;
+                break;
+            }
+        }
+
+        localStorage.setItem('todo', JSON.stringify(arr));
+    },
+
+    undone: function(t){
+        var item = t.children[1].textContent;
+        try {
+            arr = JSON.parse(localStorage.getItem('todo'));
+        } catch (error) {
+            console.log("ob " + error);
+        }
+
+        for (const key in arr) {
+            const el = arr[key];
+            if(el.name === item){
+                el.done = false;
                 break;
             }
         }
