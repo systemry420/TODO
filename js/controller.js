@@ -36,6 +36,11 @@ var controller = {
         Model.delete(this.parentNode);
         View.render(Model.getAll(), Model.getCount());
     },
+
+    done: function(){
+        console.log('hell');
+        
+    }
 }
 
 // initialize controller
