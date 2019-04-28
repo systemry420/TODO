@@ -10,7 +10,6 @@ h1 {
 body {
     background: #efefef;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    
 }
 
 .app {
@@ -56,8 +55,7 @@ input[type='checkbox']{
 }
 
 .task a {
-    color: red;
-    font-weight: bold;
+    color: rgba(255, 0, 0, 0.8);
     text-decoration: none;
 }
 

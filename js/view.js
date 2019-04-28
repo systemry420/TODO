@@ -18,7 +18,7 @@ var View = {
                 li.classList.add('task');
                 name.classList.add('task-name');
                 name.append(el.name);
-                del.textContent = 'X';
+                del.innerHTML = '<a class="fa fa-trash"></a>';
                 del.setAttribute('href', '#');
                 del.addEventListener('click', controller.deleteTask);
                 li.append(check);
@@ -47,7 +47,7 @@ var View = {
                 li.classList.add('task');
                 name.classList.add('task-name');
                 name.append(el.name);
-                del.textContent = 'X';
+                del.innerHTML = '<a class="fa fa-trash"></a>';
                 del.setAttribute('href', '#');
                 del.addEventListener('click', controller.deleteTask);
 
