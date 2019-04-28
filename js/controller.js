@@ -1,6 +1,10 @@
 var $form = document.querySelector('form');
-var $in = document.querySelector('.new-todo');
-var $clear = document.querySelector('.clear');
+    $in = document.querySelector('.new-todo'),
+    $clear = document.querySelector('.clear'),
+    $all = document.querySelector('.all'),
+    $active = document.querySelector('.active'),
+    $completed = document.querySelector('.completed');
+
 
 var controller = {
 
@@ -14,6 +18,7 @@ var controller = {
 
         // listen to the Enter key
         $form.addEventListener('submit', function (e) {
+            e.preventDefault();
             Model.add($in.value);
             View.render(Model.getAll(), Model.getCount());
             $in.value = '';
@@ -24,6 +29,21 @@ var controller = {
                 Model.drop();
                 View.render([], 0);
             }
+        });
+
+        $all.addEventListener('click', function(){
+            Model.getAll();
+            View.render(Model.getAll(), Model.getCount());
+        });
+
+        $active.addEventListener('click', function(){
+            act = Model.getActive();
+            View.render(act, act.length);
+        });
+
+        $completed.addEventListener('click', function(){
+            comp = Model.getCompleted();
+            View.render(comp, comp.length);
         });
     },
 

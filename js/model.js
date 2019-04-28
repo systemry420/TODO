@@ -92,6 +92,34 @@ var Model = {
         return JSON.parse(localStorage.getItem('todo'));
     },
 
+    getActive: function(){
+        try {
+            arr = JSON.parse(localStorage.getItem('todo'));
+        } catch (error) {
+            console.log("ob " + error);
+        }
+
+        const active = arr.filter(el => {
+            return el.done == false;
+        });
+
+        return active;
+    },
+
+    getCompleted: function(){
+        try {
+            arr = JSON.parse(localStorage.getItem('todo'));
+        } catch (error) {
+            console.log("ob " + error);
+        }
+
+        const completed = arr.filter(el => {
+            return el.done == true;
+        });
+
+        return completed;
+    },
+
     getCount: function(){
         return JSON.parse(localStorage.getItem('todo')).length;
     },
