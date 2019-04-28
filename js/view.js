@@ -29,5 +29,13 @@ var View = {
 
         var p = arr.length == 1? ' task': ' tasks';
         this.$count.innerHTML = c + p;
+    },
+
+    done: function(t){
+        t.classList.add('done');
+    },
+
+    undone: function(t){
+        t.classList.remove('done');
     }
 }

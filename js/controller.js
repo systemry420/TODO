@@ -13,7 +13,7 @@ var controller = {
 
         // listen to the Enter key
         $in.addEventListener('keypress', function (e) {
-            if(e.code == 'Enter'){
+            if(e.keyCode === 13){
                 Model.add($in.value);
                 View.render(Model.getAll(), Model.getCount());
                 $in.value = '';
@@ -38,8 +38,14 @@ var controller = {
     },
 
     done: function(){
-        console.log('hell');
-        
+        if(this.checked == true){
+            Model.done(this.parentNode);
+            View.done(this.parentNode);
+        }
+        else{
+            Model.undone(this.parentNode);
+            View.undone(this.parentNode);
+        }
     }
 }
 
