@@ -1,3 +1,8 @@
+/**
+ * Creates the template of a task
+ * @param {object} el, a task or item object
+ */
+
 function taskTemplate(el){
     var $list = document.querySelector('.todo-list'),
         li = document.createElement('li'),
