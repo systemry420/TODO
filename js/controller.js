@@ -32,8 +32,8 @@ var controller = {
         });
 
         $all.addEventListener('click', function(){
-            Model.getAll();
-            View.render(Model.getAll(), Model.getCount());
+            all = Model.getAll();
+            View.render(all, Model.getCount());
         });
 
         $active.addEventListener('click', function(){
@@ -65,7 +65,11 @@ var controller = {
             Model.undone(this.parentNode);
             View.undone(this.parentNode);
         }
-    }
+    },
+
+    isComplete: function(el){
+        return el.done? true:false;
+    },
 }
 
 // initialize controller

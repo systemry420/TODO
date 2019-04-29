@@ -7,7 +7,7 @@ var View = {
         this.$list.innerHTML = '';
         this.$count.textContent = '0 tasks';
         var arr = controller.getElems();
-        if(arr !== null){
+        if(arr.length !== 0){
             arr.forEach(el => {
                 taskTemplate(el);
             });
@@ -23,6 +23,8 @@ var View = {
         this.$list.innerHTML = '';
         if(arr.length !== 0){
             arr.forEach(el => {
+                // console.log(el);
+                
                 taskTemplate(el);
             });
         }
