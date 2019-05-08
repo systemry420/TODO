@@ -45,13 +45,16 @@ var controller = {
         // show active, uncompleted tasks
         $active.addEventListener('click', function(){
             act = Model.getActive();
-            View.render(act, act.length);
+            var c = act != null? act.length: 0;
+            View.render(act, c);
         });
 
         // show completed tasks
         $completed.addEventListener('click', function(){
             comp = Model.getCompleted();
-            View.render(comp, comp.length);
+            var c = comp != null? comp.length: 0;
+
+            View.render(comp, c);
         });
     },
 

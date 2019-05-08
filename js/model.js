@@ -115,11 +115,13 @@ var Model = {
             console.log("ob " + error);
         }
 
-        const active = arr.filter(el => {
-            return el.done == false;
-        });
+        if(arr != null){
+            arr = arr.filter(el => {
+                return el.done == false;
+            });
+        }
 
-        return active;
+        return arr;
     },
 
     getCompleted: function(){
@@ -130,15 +132,17 @@ var Model = {
             console.log("ob " + error);
         }
 
-        const completed = arr.filter(el => {
-            return el.done == true;
-        });
-
-        return completed;
+        if(arr != null){
+            arr = arr.filter(el => {
+                return el.done == true;
+            });
+        }
+        return arr;
     },
 
     getCount: function(){
-        return JSON.parse(localStorage.getItem('todo')).length;
+        arr = JSON.parse(localStorage.getItem('todo'));
+        return (arr !== null)? arr.length: 0;
     },
 
     drop: function(){

@@ -14,7 +14,8 @@ var View = {
         this.$list.innerHTML = '';
         this.$count.textContent = '0 tasks';
         var arr = controller.getElems();
-        if(arr.length !== 0){
+        
+        if(arr !== null){
             arr.forEach(el => {
                 // get the template of list item
                 taskTemplate(el);
@@ -28,14 +29,14 @@ var View = {
     render: function(arr, c) {
         // render every time the model is updated
         this.$list.innerHTML = '';
-        if(arr.length !== 0){
+        if(arr !== null){
             arr.forEach(el => {
                 taskTemplate(el);
             });
+            var p = arr.length == 1? ' task': ' tasks';
+            this.$count.innerHTML = c + p;
         }
 
-        var p = arr.length == 1? ' task': ' tasks';
-        this.$count.innerHTML = c + p;
     },
 
     done: function(t){
